@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Switcher</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        const poster = function (path) {
+            fetch(path, {
+                method: "POST"
+            })
+                .catch(error => console.error('Fetch error:', error));
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("click", function (event) {
+                const clickedElement = event.target;
+                if (clickedElement.matches("#mac-button")) {
+                    poster('switch/mac');
+                } else if (clickedElement.matches("#pc-button")) {
+                    poster('switch/pc');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <button id="mac-button">🖥️ Mac</button>
+        <button id="pc-button">🖥️ PC</button>
+    </div>
+</body>
+
+</html>
