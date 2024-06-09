@@ -23,6 +23,7 @@ It could be adapted to work on any operating system, but in this case it expects
   - If using `m1ddc`:
     - See [Commands section](https://github.com/waydabber/m1ddc#commands)
     - Keep in mind that this utility expects addresses to be decimal, not hex.
+    - It's best to reference displays by UUID, otherwise their relative ID (1, 2, 3) may change with macOS updates. See `screens.sh`.
 - `switcher.py`
   - Update or remove the `filter_ips()` hook.
   - Optionally update the port (defaults to 9000).
